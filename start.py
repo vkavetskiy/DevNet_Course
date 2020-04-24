@@ -13,9 +13,9 @@ from database import Database
 # Create Flask object and instantiate database object
 app = Flask(__name__)
 
-#path = "data/db.json"
+path = "data/db.json"
 #path = "data/db.yml"
-path = "data/db.xml"
+#path = "data/db.xml"
 db = Database(path)
 
 
