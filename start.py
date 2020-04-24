@@ -40,7 +40,7 @@ def index():
         app.logger.debug(f"balance for {acct_id}: {acct_balance}")
 
     else:
-         During a normal GET request, no need to perform any calculations
+        # During a normal GET request, no need to perform any calculations
         acct_balance = "N/A"
 
     # This is the "view", which is the jinja2 templated HTML data that is
