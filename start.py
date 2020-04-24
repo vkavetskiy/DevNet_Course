@@ -34,26 +34,21 @@ def index():
         # is to process this information, which includes using methods from
         # the "model" to get the information we need (in this case,
         # the account balance).
-        acct = self.data.get(acct_id)
-        if acct:
-            bal = float(acct["due"]) - float(acct["paid"])
-            return f"$ {bal:.2f}"
-            #return int(acct["due"]) - int(acct["paid"])
-        return None
-        #acct_id = request.form["acctid"]
-        #acct_balance = db.balance(acct_id.upper())
-        #app.logger.debug(f"balance for {acct_id}: {acct_balance}")
 
-    #else:
-        # During a normal GET request, no need to perform any calculations
-    #    acct_balance = "N/A"
+        acct_id = request.form["acctid"]
+        acct_balance = db.balance(acct_id.upper())
+        app.logger.debug(f"balance for {acct_id}: {acct_balance}")
+
+    else:
+         During a normal GET request, no need to perform any calculations
+        acct_balance = "N/A"
 
     # This is the "view", which is the jinja2 templated HTML data that is
     # presented to the user. The user interacts with this webpage and
     # provides information that the controller then processes.
     # The controller passes the account balance into the view so it can
     # be displayed back to the user.
-    #return render_template("index.html", acct_balance=acct_balance)
+    return render_template("index.html", acct_balance=acct_balance)
 
 
 if __name__ == "__main__":
