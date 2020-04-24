@@ -46,5 +46,4 @@ class Database:
         if acct:
             bal = float(acct["due"]) - float(acct["paid"])
             return f"{bal:.2f} USD"
-
         return None
